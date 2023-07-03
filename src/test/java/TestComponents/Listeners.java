@@ -21,9 +21,9 @@ public class Listeners extends BaseTest implements ITestListener{
 	ExtentTest test;
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); //Thread safe
+	
 	@Override
 	public void onTestStart(ITestResult result) {
-		
 		test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);
 	}
@@ -38,8 +38,6 @@ public class Listeners extends BaseTest implements ITestListener{
 			
 			e1.printStackTrace();
 		}
-		
-		
 		String filePath = null;
 		try {
 			
@@ -54,8 +52,6 @@ public class Listeners extends BaseTest implements ITestListener{
 			
 			e.printStackTrace();
 		}
-	
-//	    extentTest.get().log(Status.PASS, "Test Passed");	
 	}
 
 	@Override
@@ -72,7 +68,6 @@ public class Listeners extends BaseTest implements ITestListener{
 			e1.printStackTrace();
 		}
 		
-		
 		String filePath = null;
 		try {
 			
@@ -86,30 +81,23 @@ public class Listeners extends BaseTest implements ITestListener{
 		} catch (IOException e) {
 			
 			e.printStackTrace();
-		}
-	
-		//Screenshot, Attach to report
-			
+		}		
 	}
 
 	@Override
-	public void onTestSkipped(ITestResult result) {
-			
+	public void onTestSkipped(ITestResult result) {		
 	}
 
 	@Override
-	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-			
+	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {		
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
-	
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
-		
 		extent.flush();	
 	}
 }

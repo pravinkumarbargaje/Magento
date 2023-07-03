@@ -33,7 +33,6 @@ public class submitOrderTests extends BaseTest {
 	@Test(dataProvider="getData")
 	public void submitOrder(HashMap<String,String> input) throws InterruptedException {
 		
-		
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.goTo();
 		landingPage.clickSignIn();
@@ -45,12 +44,10 @@ public class submitOrderTests extends BaseTest {
 		productCatalogue.whatsNewEle();
 		productCatalogue.womenShirtSelect();
 		
-
 		productCatalogue.addProductToCart();
 		
         productCatalogue.selectWatchesFromCatagory();
         
-//      screenshot
         OrderPage orderPage =new OrderPage(driver);
         orderPage.goToCartPage();
        
@@ -68,11 +65,7 @@ public class submitOrderTests extends BaseTest {
         orderPage.increasePantCount();
         
         orderPage.getTotalValue();
-        
-//      Assert.assertEquals(orderPage.discountedTotal(),orderPage.totalValues());
-        
-        
-		
+  
         CheckoutPage checkoutPage = new CheckoutPage(driver);
       
         checkoutPage.clickOnCheckout();
@@ -86,7 +79,6 @@ public class submitOrderTests extends BaseTest {
         }
         
         checkoutPage.clickNextButton();
-        
         checkoutPage.cartValue();
         
         if (checkoutPage.cartValue().equals( orderPage.getTotalValue())) {
@@ -97,22 +89,13 @@ public class submitOrderTests extends BaseTest {
         orderPage.placeOrder();
         
         System.out.println("Thank you message: " + orderPage.getThankYouMessage());
-        System.out.println("Order number: " + orderPage.getOrderNumber());
-         
+        System.out.println("Order number: " + orderPage.getOrderNumber());  
 	}
-	
-	
-	
-	
-	
-	
+
 	@DataProvider
 	public Object[][] getData() throws IOException
 	{
-	
 		List<HashMap<String, String>> data=getJsonDataMap(System.getProperty("user.dir")+"//src//test//java//data//ProductOrder.json");
-			
-		
 		return new Object[][]  {{data.get(0)}};
 	}
 }

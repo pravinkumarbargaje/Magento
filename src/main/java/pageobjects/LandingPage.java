@@ -102,8 +102,6 @@ public class LandingPage extends AbstractComponents {
 		 System.out.println("Email Error: " + emailErrorMessage);
 		 String passwordErrorMessage = passError.getText();
 		 System.out.println("Password Error: " + passwordErrorMessage);
-//		 String confirmPasswordErrorMessage =passconfError.getText();
-//		 System.out.println("Confirm Password Error: " + confirmPasswordErrorMessage);
 		 return emailErrorMessage;
 	}
 	public String errorMessageValidations()
@@ -140,8 +138,7 @@ public class LandingPage extends AbstractComponents {
 	
 	public void clickSignIn() 
 	{
-		signInButton.click();
-		
+		signInButton.click();	
 	}
 	
 	public void clickSignOut()

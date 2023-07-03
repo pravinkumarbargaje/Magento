@@ -34,7 +34,6 @@ public class SigningIn extends BaseTest {
 		
 		landingPage.clickSignOut();
 		
-		
 		ConfirmationPage confirmationPage =new ConfirmationPage(driver);
 		confirmationPage.verifysignOutConfirmationMessage();
 		
@@ -51,21 +50,12 @@ public class SigningIn extends BaseTest {
 		String logInFailedErrorMessag = confirmationPage.verifyFailedSignIntErrorMessage();
 
 		Assert.assertTrue(confirmationPage.verifyFailedSignIntErrorMessage().equalsIgnoreCase("The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later."));
-
-		
 	}
 
-	
-	
-	
-	
 	@DataProvider
 	public Object[][] getData() throws IOException
 	{
-	
 		List<HashMap<String, String>> data=getJsonDataMap(System.getProperty("user.dir")+"//src//test//java//data//SignIn.json");
-			
-		
 		return new Object[][]  {{data.get(0)}};
 	}
 }

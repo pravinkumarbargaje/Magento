@@ -47,8 +47,6 @@ public class AbstractComponents {
 	        driver.navigate().refresh(); // Refresh the first window
 	}
 	
-	
-
 	public void waidForElementToAppear(By findBy)
 	{
 		
@@ -63,7 +61,6 @@ public class AbstractComponents {
 			wait.until(ExpectedConditions.visibilityOf(findBy));
 	}
 	
-	
 	public OrderPage goToOrdersPage()
 	{
 			orderHeader.click();
@@ -75,9 +72,9 @@ public class AbstractComponents {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.invisibilityOf(loadingImg));
 	}
-	  
-	  public String generateRandomEmail() 
-	  {
+ 
+	public String generateRandomEmail() 
+	{
 	        String alphabet = "abcdefghijklmnopqrstuvwxyz";
 	        int length = 6;
 	        Random random = new Random();
@@ -87,15 +84,12 @@ public class AbstractComponents {
 	            int index = random.nextInt(alphabet.length());
 	            char randomChar = alphabet.charAt(index);
 	            email.append(randomChar);
-	        }
-	        
+	        	}
 	        for (int i = 0; i < 3; i++) {
 	            int randomNumber = random.nextInt(10);
 	            email.append(randomNumber);
-	        }
-	        
-	        email.append("@gmail.com");
-	        
+	        	}
+	        email.append("@gmail.com");  
 	        return email.toString();
 	    }
 	}

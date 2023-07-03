@@ -24,7 +24,6 @@ public class CreateAnAccount extends BaseTest {
 	@Test(dataProvider="getData")
 	public void createAccountTest(HashMap<String,String> input)  throws InterruptedException {
 		
-		
 		LandingPage landingPage = new LandingPage(driver);
 		landingPage.goTo();																					//Go to given URL
 		
@@ -33,18 +32,14 @@ public class CreateAnAccount extends BaseTest {
 		
 		landingPage.createAccount(input.get("firstname"),input.get("lastname"),abstractComponents.generateRandomEmail(),input.get("pass"),input.get("cpass"));		
 																											// Give input and Click on create an account
-		
-		
 		ConfirmationPage confirmationPage =new ConfirmationPage(driver);
 		String accountCreatedMessage=confirmationPage.confirmationMessage();
 		abstractComponents.waidForWebElementToAppear(confirmationPage.verifyCreateAccountMessage());
 		System.out.println(abstractComponents.generateRandomEmail());
 		System.out.println(confirmationPage.confirmationMessage());
-		
-		Assert.assertTrue(confirmationPage.confirmationMessage().equalsIgnoreCase("Thank you for registering with Main Website Store."));
-
-	}
 	
+		Assert.assertTrue(confirmationPage.confirmationMessage().equalsIgnoreCase("Thank you for registering with Main Website Store."));
+	}
 	
 	@Test(dataProvider="getData")
 	public void createAccounterrorMessageValidation(HashMap<String,String> input)
@@ -54,24 +49,15 @@ public class CreateAnAccount extends BaseTest {
 		
 		landingPage.createAnAccount();
 		AbstractComponents abstractComponents = new AbstractComponents(driver);
-		
 		landingPage.createAccount(input.get("fname"),input.get("lname"),input.get("email"),input.get("wpass"),input.get("wpassw"));	
 		
 		Assert.assertTrue(landingPage.errorMessageValidation().equalsIgnoreCase("Please enter a valid email address (Ex: johndoe@domain.com)."));
-
 	}
-	
-	
-	
-	
 	
 	@DataProvider
 	public Object[][] getData() throws IOException
 	{
-	
 		List<HashMap<String, String>> data=getJsonDataMap(System.getProperty("user.dir")+"//src//test//java//data//CreateAcc.json");
-			
-		
 		return new Object[][]  {{data.get(0)}};
 	}
 }

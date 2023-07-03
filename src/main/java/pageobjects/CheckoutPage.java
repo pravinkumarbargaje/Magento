@@ -105,7 +105,6 @@ public class CheckoutPage extends AbstractComponents{
 	
 	public void fillAllDetain(String comp,String city ,String address, String postal, String mobileno) throws InterruptedException 
 	{
-		
 		Thread.sleep(7000);
 		company.sendKeys(comp);
 		fillAddress.sendKeys(address);
@@ -124,7 +123,6 @@ public class CheckoutPage extends AbstractComponents{
 	public void clickNextButton()
 	{
 		nextButton.click();
-		
 	}
 	
 	public String cartValue()
