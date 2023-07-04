@@ -38,13 +38,13 @@ public class OrderPage extends AbstractComponents {
 	@FindBy(className = "order-number")
 	WebElement orderNumber;
 	
-	@FindBy(xpath = "//td[@class='col subtotal']//span[@class='price'][normalize-space()='$59.00']")
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[3]/div[1]/div[2]/form[1]/div[1]/table[1]/tbody[1]/tr[1]/td[4]/span[1]/span[1]/span[1]")
 	WebElement sweatshirt;
 	
-	@FindBy(xpath = "//td[@class='col subtotal']//span[@class='price'][normalize-space()='$45.00']")
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[3]/div[1]/div[2]/form[1]/div[1]/table[1]/tbody[2]/tr[1]/td[4]/span[1]/span[1]/span[1]")
 	WebElement watch;
 	
-	@FindBy(xpath = "//span[contains(text(),'$112.00')]")
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[3]/div[1]/div[2]/form[1]/div[1]/table[1]/tbody[3]/tr[1]/td[4]/span[1]/span[1]/span[1]")
 	WebElement pant;
 	
 	@FindBy(css = "td[class='amount'] span span[class='price']")
@@ -91,7 +91,7 @@ public class OrderPage extends AbstractComponents {
 		int totalValues = Integer.parseInt(totalValue.getText());
 		return totalValues;
 	}
-	
+		
 	public String getTotalValue() throws InterruptedException
 	{
 		

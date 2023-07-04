@@ -4,15 +4,15 @@
   <listeners>
     <listener class-name="TestComponents.Listeners"/>
   </listeners>
-  <test thread-count="5" parallel="tests" name="Create Account Test(failed)">
+  <test thread-count="5" parallel="tests" name="submit Order Test(failed)">
     <classes>
-      <class name="tests.CreateAnAccount">
+      <class name="tests.submitOrderTests">
         <methods>
           <include name="tearDowm"/>
           <include name="launchApplication"/>
-          <include name="createAccountTest" invocation-numbers="0"/>
+          <include name="submitOrder" invocation-numbers="0"/>
         </methods>
-      </class> <!-- tests.CreateAnAccount -->
+      </class> <!-- tests.submitOrderTests -->
     </classes>
-  </test> <!-- Create Account Test(failed) -->
+  </test> <!-- submit Order Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

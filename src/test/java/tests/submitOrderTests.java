@@ -65,7 +65,7 @@ public class submitOrderTests extends BaseTest {
         orderPage.increasePantCount();
         
         orderPage.getTotalValue();
-  
+        
         CheckoutPage checkoutPage = new CheckoutPage(driver);
       
         checkoutPage.clickOnCheckout();
@@ -87,6 +87,8 @@ public class submitOrderTests extends BaseTest {
             System.out.println("Cart value is incorrect.");
         }
         orderPage.placeOrder();
+        
+        Assert.assertTrue(orderPage.getThankYouMessage().equalsIgnoreCase("Thank you for your purchase!"));
         
         System.out.println("Thank you message: " + orderPage.getThankYouMessage());
         System.out.println("Order number: " + orderPage.getOrderNumber());  

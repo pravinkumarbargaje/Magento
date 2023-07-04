@@ -61,7 +61,7 @@ public class ProductCatalogue extends AbstractComponents{
 	@FindBy(css="div[id='narrow-by-list'] div:nth-child(3) div:nth-child(1)")
 	WebElement selectMaterial;
 	
-	@FindBy(css="a[href*='45']")
+	@FindBy(xpath="/html[1]/body[1]/div[1]/main[1]/div[3]/div[2]/div[1]/div[2]/div[3]/div[3]/div[2]/ol[1]/li[3]/a[1]")
 	WebElement selectRubber;
 	
 	@FindBy(linkText="Aim Analog Watch")
@@ -136,8 +136,9 @@ public class ProductCatalogue extends AbstractComponents{
 	      Thread.sleep(2000);
 	      selectWatchPrice.click();
 	      selectWatchPriceRange.click();
-	      selectMaterial.click();
 	      
+	      selectMaterial.click();
+	      Thread.sleep(2000);
 	      selectRubber.click();
 	      selectFirstWatch.click();
 	      addToCartButton.click();
